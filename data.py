@@ -3,7 +3,7 @@ inputs = {
     "Last Name": "Pedraza Avila",
     "contact": {
         "email": "irvinpedraza@yahoo.com.mx",
-        "phone": "+52 5511737990",
+        "phone": "+52 5511----->",
         "linkedin": "https://linkedin.com/in/irvin-pedraza"
     },
     "description": {
@@ -25,25 +25,26 @@ inputs = {
 
     "Education": {
         "University Politecnica": {
-            "Degree": "Bachelor of Science in Electrical Engineering",
-            "Graduation Year": "2018",
+            "Degree": "Bachelor of Science in Electrical Engineering and Telecommunications",
+            "Graduation Year": "2014",
             "Relevant Coursework": [
                 "Wireless Communication Systems",
-                "Signal Processing",
+                "Python automation for RF engineering",
                 "Antenna Design"
             ]}
     },
 
     "Languages": {
-        "English": {
-            "level": "Fluent",
-            "percent": 90
-        },
         "Spanish": {
             "level": "Native",
             "percent": 100
+        },
+        "English": {
+            "level": "Fluent",
+            "percent": 90
         }
     },
+    
     "images": {
         "profile picture": "profile1.png"
     }
