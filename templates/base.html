@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- Basic Setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>{%block title%}{%endblock%}</title>
+
+    <!-- Page Title (Dynamic Flask/Jinja) -->
+    <title>
+        {% block title %}
+        Irvin Pedraza Avila | RF Engineer | Telecom Pre-Sales Specialist
+        {% endblock %}
+    </title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+    content="Telecom Pre-Sales Engineer specialized in LTE and 5G interference analysis, Spectrum Optimization, KPI analytics and Python automation.">
+
+    <meta name="keywords"
+    content="Irvin Pedraza Avila, RF Engineer, Telecom Engineer, LTE, 5G, Spectrum Optimization, Python, Pre-Sales Engineer">
+
+    <meta name="author" content="Irvin Pedraza Avila">
+    <meta name="creator" content="Irvin Pedraza Avila">
+    <meta name="robots" content="index, follow">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          crossorigin="anonymous">
+
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
