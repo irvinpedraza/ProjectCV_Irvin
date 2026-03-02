@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{%block title%} Home {%endblock%}
+{%block content%}
+
+<div class="container text-center mt-3"> 
+    <div class="container">
+    <img src="{{url_for('static', filename='images/' + data['images']['profile picture'])}}" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;"
+    class="rounded-circle img-thumbnail" alt="Profile Picture" width="200" height="200">
+    <h1 class="display-3 fw-bold text-center text-dark">
+    {{data["First Name"]}}
+    <span class="text-secondary">
+        {{data["Last Name"]}}
+    </span>
+    </h1>   
+
+    </h1><p>{{data["description"]["short description"]}}</p>
+    </div>
+    <div class="container text-center mt-3">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-action">Email: {{data["contact"]["email"]}}</li>
+            <li class="list-group-item list-group-item-action">Phone: {{data["contact"]["phone"]}}</li>
+            <li class="list-group-item list-group-item-action">LinkedIn: {{data["contact"]["linkedin"]}}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="container shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+        <h2>About Me</h2>
+        <p>{{data["description"]["long description"]}}</p>
+    </div>
+
+    <div class="container shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+        <h2>Work Experience</h2>
+        <ul class="list-group">
+            {%for job in data["work experience"]%}
+                <ul>
+                    <li> Position : {{data["work experience"][job]["Position"]}}</li>
+                    <li> Duration : {{data["work experience"][job]["Duration"]}}</li>
+                    <li> Responsibilities : </li>
+                    <ul>
+                        {% for responsibility in data["work experience"][job]["Responsibilities"] %}
+                            <li>{{responsibility}}</li>
+                        {% endfor %}
+                    </ul>
+                </ul>
+
+            {%endfor%}
+        </ul>
+    </div>
+</div>
+
+<div class="container mt-3"> 
+<div class="container shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+    <h2>Education</h2>
+    {% for university, details in data["Education"].items() %}
+        <h5 class="fw-semibold">{{ university }}</h5>
+        <p>
+            <strong>Degree:</strong> {{ details["Degree"] }}
+            <span class="ms-5">
+                <strong>Graduation Year:</strong>
+                {{ details["Graduation Year"] }}
+            </span>
+        </p>
+        <hr>
+        <p class="fw-semibold">Relevant Coursework</p>
+        <ul class="list-unstyled row">
+            {% for course in details["Relevant Coursework"] %}
+                <li class="col-md-4 mb-2">
+                    ✅ {{ course }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
+
+
+<div class="shadow-sm p-4 mb-5 bg-body-tertiary rounded">
+<h2>Languages</h2>
+{% for idiom, details in data["Languages"].items() %}
+<div class="mb-4">
+    <div class="d-flex justify-content-between">
+        <strong>{{ idiom }}</strong>
+        <span>
+            {{ details.level }} ({{ details.percent }}%)
+        </span>
+    </div>
+    <div class="progress" style="height:10px;">
+        <div class="progress-bar bg-dark"
+             style="width: {{ details.percent }}%">
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+{%endblock%}
